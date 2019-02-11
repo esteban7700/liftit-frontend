@@ -8,14 +8,14 @@ import { mutationVehicleAndOwner, queryOwners, queryBrands } from '../../../gene
   styleUrls: ['./form-new-ownerandvehicle.component.css']
 })
 export class FormNewOwnerAndVehicleComponent implements OnInit {
-  private newName: string;
-  private newCedula: string;
-  private newPlaca: string;
-  private newMarca: string;
-  private newTipo: string;
-  private cannotSave: boolean;
+   newName: string;
+   newCedula: string;
+   newPlaca: string;
+   newMarca: string;
+   newTipo: string;
+   cannotSave: boolean;
   @Output() saveEvent = new EventEmitter<void>();
-  constructor(private apollo: Apollo) { }
+  constructor( public apollo: Apollo) { }
 
   ngOnInit() {
   }

@@ -13,13 +13,13 @@ import { queryOwners } from '../../../general/components/querys';
 })
 export class SearchComponent implements OnInit {
 
-  private paramsSearch: any;
-  private selectedSearch: string;
-  private stringSearch: string;
-  private owners: Owner[];
+   paramsSearch: any;
+   selectedSearch: string;
+   stringSearch: string;
+   owners: Owner[];
   @Output() searchEvent = new EventEmitter<Owner[]>();
 
-  constructor(private apollo: Apollo) {
+  constructor( public apollo: Apollo) {
     this.paramsSearch = ['Placa del vehículo', 'Cedúla del propietario', 'Nombre del propietario'];
     this.selectedSearch = 'Seleccione';
   }

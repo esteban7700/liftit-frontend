@@ -13,8 +13,8 @@ import { queryBrands } from '../../../general/components/querys';
   styleUrls: ['./brand.component.css']
 })
 export class BrandComponent implements OnInit {
-  private brands: Brand[];
-  constructor(private apollo: Apollo) { }
+   brands: Brand[];
+  constructor( public apollo: Apollo) { }
 
   ngOnInit() {
     this.getListBrands();

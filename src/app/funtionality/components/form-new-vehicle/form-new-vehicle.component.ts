@@ -10,14 +10,14 @@ import { Output } from '../../../../../node_modules/@angular/core';
 })
 export class FormNewVehicleComponent implements OnInit {
 
-  private newPlaca: string;
-  private newMarca: string;
-  private newTipo: string;
-  private newOwnerId: string;
-  private cannotSave: boolean;
+   newPlaca: string;
+   newMarca: string;
+   newTipo: string;
+   newOwnerId: string;
+   cannotSave: boolean;
   @Output() saveEvent = new EventEmitter<boolean>();
 
-  constructor(private apollo: Apollo) { }
+  constructor( public apollo: Apollo) { }
 
   ngOnInit() {
   }

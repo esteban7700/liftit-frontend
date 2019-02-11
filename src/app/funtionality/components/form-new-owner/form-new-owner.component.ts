@@ -10,12 +10,12 @@ import { Output } from '../../../../../node_modules/@angular/core';
 })
 export class FormNewOwnerComponent implements OnInit {
 
-  private newName: string;
-  private newCedula: string;
+   newName: string;
+   newCedula: string;
   @Output() saveEvent = new EventEmitter<void>();
-  private cannotSave: boolean;
+   cannotSave: boolean;
 
-  constructor(private apollo: Apollo) {
+  constructor(public apollo: Apollo) {
   }
 
   ngOnInit() {

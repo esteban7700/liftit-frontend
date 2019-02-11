@@ -16,10 +16,10 @@ import {Aigle} from 'aigle';
 })
 export class ContentComponent implements OnInit {
 
-  private  owners: Owner[];
-  private currentOwner;
+    owners: Owner[];
+   currentOwner;
 
-  constructor(private modalService: NgbModal, private apollo: Apollo) {
+  constructor( public modalService: NgbModal, public apollo: Apollo) {
   }
 
   ngOnInit() {
