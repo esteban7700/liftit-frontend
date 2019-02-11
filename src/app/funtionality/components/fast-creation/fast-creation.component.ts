@@ -9,7 +9,7 @@ import { NewOwnerAndVehicleComponent } from '../new-ownerandvehicle/new-ownerand
 })
 export class FastCreationComponent implements OnInit {
 
-  constructor( modalService: NgbModal) { }
+  constructor( public modalService: NgbModal) { }
 
   ngOnInit() {
   }
