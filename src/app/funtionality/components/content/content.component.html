@@ -1,0 +1,59 @@
+<div class="rcorner">
+  <h4 class="center">Propietarios</h4>
+  <div class="table-responsive">
+    <table class="rowhighlight table thead-light center">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Cédula</th>
+          <th scope="col">Número de vehículos</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let owner of owners;  let i = index" [attr.data-index]="i" (click)="selectOwner(owner)" [class.highlighted]="currentOwner!=null && owner.cedula === currentOwner.cedula">
+        <tr>
+          <th scope="row">{{i + 1}}</th>
+          <td>{{owner.nombre}}</td>
+          <td>{{owner.cedula}}</td>
+          <td>{{owner.vehicles.length}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-outline-dark" (click)="addOwner()" style=" margin: 5px">Agregar propietario</button>
+
+    <div *ngIf="currentOwner!=null">
+      <h4 class="center">Vehículos de {{currentOwner.nombre}}</h4>
+      <div *ngIf="currentOwner.vehicles.length>0">
+        <div class="table-responsive">
+          <table class="table thead-light center">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Placa</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Tipo</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let vehicle of currentOwner.vehicles;  let i = index" [attr.data-index]="i">
+              <tr>
+                <th scope="row">{{i + 1}}</th>
+                <td>{{vehicle.placa}}</td>
+                <td>{{vehicle.marca}}</td>
+                <td>{{vehicle.tipo}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div *ngIf="!currentOwner.vehicles.length>0" class="center" style="color: #FE642D">
+        <label>El propietario no poseé vehículos asociados</label>
+      </div>
+      <div style="text-align: left" style="display: inline-block; margin: 5px">
+        <button type="button" class="btn btn-outline-dark" (click)="addVehicle()">Agregar vehículo</button>
+      </div>
+      <div style="text-align: right" style="display: inline-block">
+        <button type="button" class="btn btn-outline-dark" (click)="reset()">Volver</button>
+      </div>
+    </div>
+  </div>

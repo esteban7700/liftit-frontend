@@ -1,0 +1,12 @@
+<div class="form-group rcorner">
+  <h6>Consultar</h6>
+  <label for="tipobusqueda" style="text-align: left">Busqueda por*: </label>
+  <select [(ngModel)]="selectedSearch" class="form-control" (change) = "resetString()" >
+    <option>Seleccione</option>
+    <option *ngFor="let param of paramsSearch" [value]="param"> {{param}}</option>
+  </select>
+  <div *ngIf="selectedSearch != 'Seleccione'">
+    <label style="text-align: left">Ingrese {{selectedSearch | lowercase}}*: </label>
+    <input [(ngModel)]="stringSearch" type="text" class = "form-control" (input) = "doSearch()">
+  </div>
+</div>

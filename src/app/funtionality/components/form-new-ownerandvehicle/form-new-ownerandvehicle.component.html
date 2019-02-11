@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-sm-6">
+    <form>
+      <h5 class="center">Vehículo</h5>
+      <div class="form-group">
+        <label for="placa">Placa</label>
+        <input type="text" class="form-control" [(ngModel)]="newPlaca" [ngModelOptions]="{standalone: true}" aria-describedby="nombreHelp"
+          placeholder="Ingrese placa">
+      </div>
+      <div class="form-group">
+        <label for="marca">Marca</label>
+        <input type="text" class="form-control" [(ngModel)]="newMarca" [ngModelOptions]="{standalone: true}" placeholder="Ingrese marca">
+      </div>
+      <div class="form-group">
+        <label for="tipo">Tipo</label>
+        <input type="text" class="form-control" [(ngModel)]="newTipo" [ngModelOptions]="{standalone: true}" placeholder="Ingrese tipo">
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-6">
+    <form>
+      <h5 class="center">Propietario</h5>
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" [(ngModel)]="newName" [ngModelOptions]="{standalone: true}" aria-describedby="nombreHelp"
+          placeholder="Ingrese nombre">
+        <small id="nombreHelp" class="form-text text-muted">Ingrese nombre completo</small>
+      </div>
+      <div class="form-group">
+        <label for="cedula">Cédula</label>
+        <input type="number" class="form-control" [(ngModel)]="newCedula" [ngModelOptions]="{standalone: true}" placeholder="Ingrese cédula">
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-12">
+    <div *ngIf="cannotSave" style="color: red;text-align: center" class="animate-if">No fue posible guardar el propietario, intenta de nuevo o cierra la ventana</div>
+    <div class="center">
+      <button type="submit" class="btn btn-outline-dark" (click)="addOwnerAndVehicle();" [disabled]="!canShowSave()">Guardar</button>
+    </div>
+  </div>
+</div>

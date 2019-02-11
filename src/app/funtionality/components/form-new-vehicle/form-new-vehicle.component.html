@@ -1,0 +1,20 @@
+<form>
+  <div class="form-group">
+    <label for="placa">Placa</label>
+    <input type="text" class="form-control" [(ngModel)]="newPlaca" [ngModelOptions]="{standalone: true}" aria-describedby="nombreHelp"
+      placeholder="Ingrese placa">
+  </div>
+  <div class="form-group">
+    <label for="marca">Marca</label>
+    <input type="text" class="form-control" [(ngModel)]="newMarca" [ngModelOptions]="{standalone: true}" placeholder="Ingrese marca">
+  </div>
+  <div class="form-group">
+    <label for="tipo">Tipo</label>
+    <input type="text" class="form-control" [(ngModel)]="newTipo" [ngModelOptions]="{standalone: true}" placeholder="Ingrese tipo">
+  </div>
+
+  <div *ngIf="cannotSave" style="color: red;text-align: center" class="animate-if">No fue posible guardar el vehículo, intenta de nuevo o cierra la ventana</div>
+  <div class="center">
+    <button type="submit" class="btn btn-outline-dark" (click)="addVehicle();" [disabled]="!canShowSave()">Guardar</button>
+  </div>
+</form>

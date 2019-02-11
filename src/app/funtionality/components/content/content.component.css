@@ -1,0 +1,11 @@
+.rowhighlight tr:hover td {
+    background:#000;
+    color: white;
+    cursor: pointer;
+}
+
+.highlighted td{
+    background:#000;
+    color: white;
+    cursor: pointer;
+}

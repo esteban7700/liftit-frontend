@@ -1,0 +1,20 @@
+<div class="form-group rcorner">
+  <h6>Consulta de</h6>
+  <label for="tipobusqueda" style="text-align: left"> Cantidad de vehículos existentes por cada marca</label>
+  <div class="table-responsive">
+    <table class="rowhighlight table thead-light center">
+      <thead>
+        <tr>
+          <th scope="col">Marca</th>
+          <th scope="col">Cantidad de vehículos</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let brand of brands">
+        <tr>
+          <td>{{brand.nombre | titlecase}}</td>
+          <td>{{brand.cantidad}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
